@@ -38,10 +38,14 @@ def read_file() -> str:
         with open('file.txt', 'r', encoding='utf8') as data:
             for line in data:
                 directory_str += line
+        if len(directory_str) == 0:
+            print('\nСправочник пуст!!! Добавьте свой первый контакт в справочник,\nвыбрав пункт меню '
+                  '"Создать новый контакт".\n')
         return directory_str
     except FileNotFoundError:
-        print('\nСправочник пуст!!! Добавьте свой первый контакт в справочник.\n')
-        add_new_contact()
+        print('\nСправочник пуст!!! Добавьте свой первый контакт в справочник,\nвыбрав пункт меню '
+              '"Создать новый контакт".\n')
+        main()
 
 
 def show_all_directory():
